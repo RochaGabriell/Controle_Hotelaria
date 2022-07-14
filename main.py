@@ -1,8 +1,7 @@
 import os
 import validar_CPF
 import apartamentos
-#str_cpf = str(input("CPF: "))
-#print(validar_CPF.Validar(str_cpf))
+
 def Home():
     os.system('clear')
     print(f"\n {'-'*30} ")
@@ -34,8 +33,22 @@ def Home():
 
 # 01
 def Registrar_Reserva():
+    # Dados(Nome, CPF, Categoria(Simples. Duplo, Casal, Luxo), opeck-in, opeck-out)
     os.system('clear')
     print("\nRESERVAR QUARTO\n")
+
+    nome = str(input("Nome: "))
+    cont = True
+    while cont:
+        str_cpf = str(input("CPF: "))
+        validar = validar_CPF.Validar(str_cpf)
+        if validar == False:
+            print("CPF inválido!\n")
+        else:
+            cont = False
+    telefone = str(input("Telefone Nº: "))
+    check_in = str(input("Check-In: "))
+    check_out = str(input("Check-Out: "))
 
 def Consultar_Reserva():
     pass
@@ -47,7 +60,6 @@ def Registrar_Saida():
     pass
 
 def Cadastrar_Hospede():
-    # Dados(Nome, CPF, Categoria(Simples. Duplo, Casal, Luxo), opeck-in, opeck-out)
     pass
 
 # 02
